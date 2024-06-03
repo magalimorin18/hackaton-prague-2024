@@ -49,16 +49,16 @@ const processData = (name: string, data: any) => {
 };
 
 const main = async () => {
-  const { name } = await getCommandArgument();
+  const { name, maxOffset } = await getCommandArgument();
 
   const icon = iconsList[name];
 
   console.log('🤔 Contacting Graph Node...');
   console.log(`${icon} Querying ${name}`, GRAPH_URL);
 
-  for (let counter = 0; counter < 10; counter++) {
-    const offset = counter * 1000;
-    const query = generateQuery(name, offset);
+  for (let counter = 0; counter < maxOffset; counter++) {
+    const currentOffset = counter * 1000;
+    const query = generateQuery(name, currentOffset);
 
     console.log('📝Query', query);
 

@@ -24,4 +24,5 @@ export interface Transaction {
 
 export interface Args {
   name: string;
+  maxOffset: number;
 }
