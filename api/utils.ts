@@ -3,15 +3,20 @@ import { Args, NAME } from './interface';
 import fs from 'fs';
 
 export async function getCommandArgument(): Promise<Args> {
-  const arg = process.argv[2];
+  const maxOffset = Number(process.argv[3]);
+  const name = process.argv[2];
 
-  switch (arg) {
+  if (!Number(maxOffset)) {
+    throw new Error('⚠️ Provided offset must be a number.');
+  }
+
+  switch (name) {
     case 'profiles':
-      return { name: NAME.PROFILES };
+      return { name: NAME.PROFILES, maxOffset };
     case 'assets':
-      return { name: NAME.ASSETS };
+      return { name: NAME.ASSETS, maxOffset };
     case 'txs':
-      return { name: NAME.TRANSACTIONS };
+      return { name: NAME.TRANSACTIONS, maxOffset };
     default:
       throw new Error(
         "Unrecognised command argument. Available options are 'profiles', 'assets' or 'txs' ",
