@@ -1,7 +1,10 @@
-export enum NAME {
+export enum TYPE {
   PROFILES = 'Profiles',
   ASSETS = 'Assets',
   TRANSACTIONS = 'Transactions',
+  RELATIONSHIPS = 'Relationships',
+  COUNT_RELATIONSHIPS = 'Count_Relationships',
+  PROFILES_SET = 'Profiles_Set',
 }
 
 export const iconsList: { [key: string]: string } = {
@@ -23,5 +26,5 @@ export interface Transaction {
 }
 
 export interface Args {
-  name: string;
+  type: string;
 }

@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "graph:profile": "ts-node ./api/graph-ql-query.ts profiles",
-    "graph:assets": "ts-node ./api/graph-ql-query.ts assets",
-    "graph:txs": "ts-node ./api/graph-ql-query.ts txs"
+    "graph:profiles": "ts-node ./api/main.ts profiles",
+    "graph:assets": "ts-node ./api/main.ts assets",
+    "graph:txs": "ts-node ./api/main.ts txs",
+    "graph": "ts-node ./api/main.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -27,7 +28,7 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.77.4",
+    "sass": "^1.77.8",
     "viem": "2.x"
   },
   "devDependencies": {
@@ -40,8 +41,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
-    "ethers": "^6.12.1",
-    "node-sass": "^9.0.0",
+    "ethers": "^6.13.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.3",
     "ts-node": "^10.9.1",
